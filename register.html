@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Registration Form</div>
+        <form action="https://formsubmit.co/doanlamyomostt123@gmail.com" method="post">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              <input type="text" placeholder="Enter Your name" required>
+            </div>
+            <div class="input-box">
+                <span class="details">sID email</span>
+                <input type="text" placeholder="Enter Your sID email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">National ID number</span>
+                <input type="text" placeholder="Enter Your ID" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Phone number</span>
+                <input type="text" placeholder="Enter Your phone number" required>
+              </div>
+              
+          </div>
+          <div class="bank">
+            <br>Account Name: GIANG VIET AN 
+            <br>Account Number: 1021896919
+            <br>Bank name: Ngan Hang TMCP Ngoai Thuong Viet Nam (VCB) - CN Ba Dinh
+            <br>Payment Note: FullName SID (E.g. NguyenVanA S3100000)
+            <br><br> Please upload your image of banking for the following step:
+          </div>
+          <br><form action="upload.php" method="post" enctype="multipart/form-data">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+          </form>
+
+          <br><br>
+          <div style="height:100px;width: 500px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+            Terms and conditions:
+<br> 1.Each guest is validated via contribution fund ticket and must be presented with 
+your Student ID card at the time of entrance.
+<br> 2.The contribution fund is not refundable, 
+but the transfer of ticket ownership is permitted once notified to the event organizer via email <b>no later than 12/4/2022.</b> 
+<br>3. Any form of counterfeit or reselling for commercial gain is strictly prohibited. 
+<br>4. All payments are proceeded online. Your ticket will be available right after a successful transaction is made. A confirmation email with the date and location of ticket retrieval will be sent.   
+<br>5. The Event Organizer reserves the right to refuse entrance for any act of violation against the event's terms, conditions and regulations.
+            
+            </div>
+            <br>
+            <div class="input-box">
+                <span class="details">I agree to terms and conditions</span>
+                <input type="checkbox" placeholder="I agree" required>
+              </div>
+              
+          <div class="button" style="position: relative; top: 15px;">
+            <a href="https://docs.google.com/spreadsheets/d/1nwo7ye5yAjvtkaQpk4YbScLKQxxyWbNHX9roItQcW6I/edit#gid=0"><input type="submit" value="Register" style="width: 90px; height: 30px;"></a>
+          </div>
+        </form>
+       </div>
+</body>
+</html>
