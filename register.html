@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="title"> <b>Registration Form</b> </div>
+    
+        <form name="google-sheet" action="https://formspree.io/f/mwkynrze" accept-charset="utf-8" method="POST" enctype="multipart/form-data"
+        >
+          
+          <div class="user-details">
+            <div class="input-box">
+              <span  class="details"><b>Full Name</b> </span>
+              <input name="name"  type="text" placeholder="enter your full name" required>
+            </div>
+            <div class="input-box">
+                <span class="details"><b>sID email</b> (s31000@rmit.edu.vn)</span>
+                <input type="text" name="_replyto" placeholder="Enter your sID email" required>
+              </div>
+              <div class="input-box">
+                <span class="details"> <b>National ID number</b> (CCCD)</span>
+                <input type="text" name="idnumber" placeholder="Enter Your ID" required>
+              </div>
+              <div class="input-box">
+                <span class="details"> <b>Phone number</b> </span>
+                <input name="phonenumber" type="text" placeholder="Enter Your phone number" required>
+              </div>
+              
+          </div>
+       
+          <div class="bank">
+            
+             <b>(1) Total payment:</b> <span class="bill"> 149,000 VND </span> 
+            <br> <b>(2) Payment Instructions: </b>  
+            <br> Account Name: GIANG VIET AN 
+            <br>Account Number: 1021896919
+            <br>Bank name: Ngan Hang TMCP Ngoai Thuong Viet Nam (VCB) - CN Ba Dinh
+            <br>Payment Note: FullName SID (E.g. NguyenVanA S3100000)
+            <br><br>
+          </div>
+          <b>(3) Upload the screenshot of your payment: </b> 
+          
+        <label for="upload"></label>
+        <input type="file" name="upload">
+          
+    
+
+          <br> <b> (4) The exact pick-up date and location will be informed via email.</b>
+          <br>
+          <b>(5)Terms and conditions:</b> 
+          <div style="height:60px;width: 300px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+           
+ 1.Each guest is validated via contribution fund <br> ticket and must be presented with 
+your Student ID card at the time of <br> entrance.
+<br> 2.The contribution fund is not refundable, 
+but the <br> transfer of ticket ownership is permitted once notified to the event <br> organizer via email <b>no later than 12/4/2022.</b> 
+<br>3. Any form of counterfeit or reselling for <br> commercial gain is strictly prohibited. 
+<br>4. All payments are proceeded online. Your ticket <br> will be available right after a successful transaction is made. A confirmation email with the date and location of ticket retrieval will be sent.   
+<br>5. The Event Organizer reserves the right to refuse <br> entrance for any act of violation against the event's terms, <br> conditions and regulations.
+            
+            </div>
+            <br>
+            <div class="input-box">
+                <span class="details">I agree to the <b>Terms and Conditions</b> </span>
+                <input type="checkbox" placeholder="I agree" required>
+              </div>
+              <div id="form_alerts" style="font-size: x-large; font-weight: bolder; color: green;">
+              <div class="button" style="position: relative; top: 15px;">
+                <input type="submit"  value="Register" style="width: 90px; height: 30px;">
+              </div>
+            </div>
+              
+        </form>
+       </div>
+       <!---script-->
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyqJ1nI_x-mrqmp-a5HhVe9ENVXv_QASD0cnpnSEVQL6b5iCDLZ48ktvfSv-8Fl7K4cqA/exec'
+      const form = document.forms['google-sheet']
+      
+      form.addEventListener('submit',  e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => $("#form_alerts").html("<div class='alert alert-success'>Registration sent successfully.</div>"))
+          .catch(error => $("#form_alerts").html("<div class='alert alert-danger'>Contact message not sent.</div>"))
+      })
+  </script>
+</body>
+</html>
